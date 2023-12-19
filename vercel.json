@@ -2,17 +2,16 @@
     "builds": [
       { "src": "vercel_build.sh", "use": "@vercel/python" }
     ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/vercel_build.sh" }
-    ]
-  ,"routes": [
+    
+    
+  "routes": [
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "myweb/wsgi.py"
+      "dest": "cross_backend/wsgi.py"
     }
   ]
 }
