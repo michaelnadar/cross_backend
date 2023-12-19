@@ -1,14 +1,9 @@
 {
-    "builds": [{
-        "src": "cross_backend/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+    "builds": [
+      { "src": "vercel_build.sh", "use": "@vercel/python" }
+    ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "cross_backend/wsgi.py"
-        }
+      { "src": "/(.*)", "dest": "/vercel_build.sh" }
     ]
-}
-
+  }
+  
